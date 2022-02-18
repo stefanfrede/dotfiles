@@ -26,8 +26,8 @@
       glob: true
 
     # Git config files
-    ~/.gitconfig: git/config
-    ~/.gitignore: git/ignore
-    ~/.gitmessage: git/message
+    ~/.gitconfig: git/gitconfig
+    ~/.gitignore: git/gitignore
+    ~/.gitmessage: git/gitmessage
 
 - shell: []

@@ -9,7 +9,7 @@
   template = ~/.gitmessage
   gpgsign = true
 [push]
-  default = upstream
+  default = current
 [fetch]
   prune = true
 [pull]

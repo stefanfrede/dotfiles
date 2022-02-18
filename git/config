@@ -1,0 +1,66 @@
+[init]
+  defaultBranch = main
+[core]
+  excludesfile = ~/.gitignore
+  autocrlf = input
+  pager = delta
+  editor = nvim
+[commit]
+  template = ~/.gitmessage
+  gpgsign = true
+[push]
+  default = upstream
+[fetch]
+  prune = true
+[pull]
+  rebase = false
+[merge]
+  ff = only
+[rebase]
+  autosquash = true
+[user]
+  name = Stefan Frede
+  email = stefan@frede.dev
+  signingkey = DF19E1CAE149104A4CD7F8CAF494D54866659484
+[github]
+  user = stefanfrede
+[gpg]
+  program = /usr/bin/gpg
+[alias]
+  pf = push --force-with-lease
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  hist = log --graph --pretty=format:'%h %ad | %s%d [%an]' --date=short
+  last = log -1 -p HEAD
+  latest = show --name-only --oneline HEAD
+  down = pull --rebase origin master
+  up = push -u origin master
+  save = "!git add -A; git commit ."
+  uptags = push --follow-tags
+  downtags = fetch --tags
+  branches = for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(color:bold)%(refname:short)\" refs/remotes
+  overview = log --all --since='2 weeks' --oneline --no-merges
+  recent = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
+  stats = shortlog -sn --all --no-merges
+[delta]
+  features = line-numbers
+  syntax-theme = Nord
+  minus-style = "#2e3440" "#bf616a"
+  minus-emph-style = "#2e3440" "#81a1c1"
+  plus-style = "#2e3440" "#a3be8c"
+  plus-emph-style = "#2e3440" "#81a1c1"
+[delta "line-numbers"]
+  line-numbers = true
+  line-numbers-minus-style = "#bf616a"
+  line-numbers-plus-style = "#a3be8c"
+  line-numbers-zero-style = "#4c566a"
+  line-numbers-left-style = "#4c566a"
+  line-numbers-right-style = "#4c566a"
+[pretty]
+  colored = format:%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr, %cn)%Creset
+[diff]
+  colorMoved = zebra
+  tool = vimdiff
+[difftool]
+  prompt = false
+[interactive]
+  diffFilter = delta --color-only

@@ -1,3 +1,33 @@
-- clean: []
-- link: {}
+- defaults:
+    link:
+      create: true
+      force: true
+      relink: true
+
+- clean:
+    - '~'
+    - '~/.config'
+
+- link:
+    # Bat
+    ~/.config/bat/config: bat/config
+
+    # Fish shell config files
+    ~/.config/fish/config.fish: fish/config.fish
+    ~/.config/fish/fish_plugins: fish/fish_plugins
+    ~/.config/fish/conf.d:
+      path: fish/conf.d/*.fish
+      glob: true
+    ~/.config/fish/completions:
+      path: fish/completions/*.fish
+      glob: true
+    ~/.config/fish/functions:
+      path: fish/functions/*.fish
+      glob: true
+
+    # Git config files
+    ~/.gitconfig: git/config
+    ~/.gitignore: git/ignore
+    ~/.gitmessage: git/message
+
 - shell: []

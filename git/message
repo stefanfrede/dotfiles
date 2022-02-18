@@ -1,0 +1,24 @@
+
+
+# The commit message should be structured as follows:
+#
+# <type>[optional scope]: <description>
+#
+# [optional body]
+#
+# [optional footer]
+#
+# The commit contains the following structural elements:
+#
+# 1. fix:
+#    a commit of the type fix patches a bug in the codebase
+# 2. feat:
+#    a commit of the type feat introduces a new feature to the codebase
+# 3. BREAKING CHANGE:
+#    a commit that has the text BREAKING CHANGE: at the beginning of its
+#    optional body or footer section introduces a breaking change
+# 4. The following commit types are allowed too:
+#    chore:, docs:, perf:, refactor:, style:, and test:
+#
+# For examples and more details look here:
+# https://www.conventionalcommits.org

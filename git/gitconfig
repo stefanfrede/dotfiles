@@ -4,7 +4,7 @@
   excludesfile = ~/.gitignore
   autocrlf = input
   pager = delta
-  editor = nvim
+  editor = nvr --remote-wait-silent
 [commit]
   template = ~/.gitmessage
   gpgsign = true
@@ -14,8 +14,17 @@
   prune = true
 [pull]
   rebase = false
+[diff]
+  colorMoved = zebra
+  tool = nvr
+[difftool "nvr"]
+  cmd = nvr -s -d $LOCAL $REMOTE
+  prompt = false
 [merge]
   ff = only
+  tool = nvr
+[mergetool "nvr"]
+  cmd = nvr -s -d $LOCAL $BASE $REMOTE $MERGED -c 'wincmd J | wincmd ='
 [rebase]
   autosquash = true
 [user]
@@ -26,21 +35,6 @@
   user = stefanfrede
 [gpg]
   program = /usr/bin/gpg
-[alias]
-  pf = push --force-with-lease
-  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-  hist = log --graph --pretty=format:'%h %ad | %s%d [%an]' --date=short
-  last = log -1 -p HEAD
-  latest = show --name-only --oneline HEAD
-  down = pull --rebase origin master
-  up = push -u origin master
-  save = "!git add -A; git commit ."
-  uptags = push --follow-tags
-  downtags = fetch --tags
-  branches = for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(color:bold)%(refname:short)\" refs/remotes
-  overview = log --all --since='2 weeks' --oneline --no-merges
-  recent = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
-  stats = shortlog -sn --all --no-merges
 [delta]
   features = line-numbers
   syntax-theme = Nord
@@ -57,10 +51,20 @@
   line-numbers-right-style = "#4c566a"
 [pretty]
   colored = format:%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr, %cn)%Creset
-[diff]
-  colorMoved = zebra
-  tool = vimdiff
-[difftool]
-  prompt = false
 [interactive]
   diffFilter = delta --color-only
+[alias]
+  pf = push --force-with-lease
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  hist = log --graph --pretty=format:'%h %ad | %s%d [%an]' --date=short
+  last = log -1 -p HEAD
+  latest = show --name-only --oneline HEAD
+  down = pull --rebase origin master
+  up = push -u origin master
+  save = "!git add -A; git commit ."
+  uptags = push --follow-tags
+  downtags = fetch --tags
+  branches = for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(color:bold)%(refname:short)\" refs/remotes
+  overview = log --all --since='2 weeks' --oneline --no-merges
+  recent = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
+  stats = shortlog -sn --all --no-merges

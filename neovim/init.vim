@@ -10,7 +10,6 @@
 "                @stefanfrede
 
 " Settings {{{
-
 " Customize indentation per file type
 filetype plugin indent on
 
@@ -88,7 +87,6 @@ autocmd TermOpen * setlocal nonumber norelativenumber
 " }}}
 
 " Keybindings {{{
-
 " Set leader to <space>
 let mapleader = ' '
 
@@ -124,6 +122,14 @@ let g:nord_italic_comments = 1
 if &t_Co == 8 && $TERM !~# '^Eterm'
   set t_Co=16
 endif
+" }}}
+
+" Plug mhinz/neovim-remote {{{
+" Use nvr as git editor
+let $GIT_EDITOR = 'nvr -cc split --remote-wait'
+
+" Prefer `:wq` or `:x` over of `:w|bd`
+autocmd FileType gitcommit,gitrebase,gitconfig set bufhidden=delete
 " }}}
 
 " https://vi.stackexchange.com/questions/3814/is-there-a-best-practice-to-fold-a-vimrc-file

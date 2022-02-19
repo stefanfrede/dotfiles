@@ -7,6 +7,7 @@
 - clean:
     - '~'
     - '~/.config'
+    - '~/.local'
 
 - link:
     # Bat
@@ -29,5 +30,11 @@
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
     ~/.gitmessage: git/gitmessage
+
+    # Neovim
+    ~/.config/nvim/init.vim: neovim/init.vim
+
+    # Tree-sitter
+    ~/.local/bin/tree-sitter: tree-sitter/tree-sitter
 
 - shell: []

@@ -37,4 +37,11 @@
     # Tree-sitter
     ~/.local/bin/tree-sitter: tree-sitter/tree-sitter
 
-- shell: []
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+  - command: ./scripts/install-python.sh
+    description: Installing Python
+    stderr: true
+  - command: ./scripts/install-neovim-remote.sh
+    description: Installing neovim-remote
+    stderr: true

@@ -18,3 +18,6 @@ tags
 tmp/**/*
 .tool-versions
 *.code-workspace
+
+# nvim sessions
+Session.vim

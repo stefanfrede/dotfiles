@@ -4,5 +4,5 @@ if status --is-interactive
 
   abbr -a -g ext 'exa --tree --level'
 
-  abbr g git
+  abbr -a -g g 'git'
 end

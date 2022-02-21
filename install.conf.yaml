@@ -39,9 +39,18 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+  - command: ./scripts/install-git.sh
+    description: Installing Git
+    stdout: true
+  - command: ./scripts/install-utilities.sh
+    description: Installing utilities
+    stdout: true
   - command: ./scripts/install-python.sh
     description: Installing Python
-    stderr: true
+    stdout: true
+  - command: ./scripts/install-neovim.sh
+    description: Installing neovim
+    stdout: true
   - command: ./scripts/install-neovim-remote.sh
     description: Installing neovim-remote
-    stderr: true
+    stdout: true

@@ -16,11 +16,9 @@
     # Fish shell config files
     ~/.config/fish/config.fish: fish/config.fish
     ~/.config/fish/fish_plugins: fish/fish_plugins
+    ~/.config/fish/completions/fisher.fish: fish/completions/fisher.fish
     ~/.config/fish/conf.d:
       path: fish/conf.d/*.fish
-      glob: true
-    ~/.config/fish/completions:
-      path: fish/completions/*.fish
       glob: true
     ~/.config/fish/functions:
       path: fish/functions/*.fish

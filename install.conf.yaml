@@ -29,8 +29,13 @@
     ~/.gitignore: git/gitignore
     ~/.gitmessage: git/gitmessage
 
-    # Neovim
-    ~/.config/nvim/init.vim: neovim/init.vim
+    # Neovim config files
+    ~/.config/nvim/init.lua: nvim/init.lua
+    ~/.config/nvim/lua/user/:
+      create: true
+      glob: true
+      path: nvim/lua/user/*
+      relink: true
 
     # Tree-sitter
     ~/.local/bin/tree-sitter: tree-sitter/tree-sitter

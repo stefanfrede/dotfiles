@@ -294,6 +294,19 @@ if ! command -v rg >/dev/null 2>&1; then
   popd
 fi
 
+# Check if fzf is installed
+# https://github.com/junegunn/fzf
+if ! command -v fzf >/dev/null 2>&1; then
+  if git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf &> /dev/null; then
+    ~/.fzf/install
+
+    echo "Successfully installed fzf."
+  else
+    echo "Failed to install fzf."
+    exit 1
+  fi
+fi
+
 # Check if starship is installed
 # https://starship.rs/
 if ! command -v starship >/dev/null 2>&1; then

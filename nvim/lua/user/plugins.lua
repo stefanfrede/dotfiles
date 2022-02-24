@@ -52,12 +52,13 @@ return packer.startup(function(use)
 	use("moll/vim-bbye")
 	use("nvim-lualine/lualine.nvim")
 	use("akinsho/toggleterm.nvim")
-  use "ahmedkhalf/project.nvim"
-  use 'lewis6991/impatient.nvim'
-  use "lukas-reineke/indent-blankline.nvim"
-  use "goolord/alpha-nvim"
-  use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
+  use("ahmedkhalf/project.nvim")
+  use("lewis6991/impatient.nvim")
+  use("lukas-reineke/indent-blankline.nvim")
+  use("goolord/alpha-nvim")
+  use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
 	use("andymass/vim-matchup")
+  use("ggandor/lightspeed.nvim")
 	use("tpope/vim-repeat")
 	use("tpope/vim-surround")
 	use("tpope/vim-unimpaired")

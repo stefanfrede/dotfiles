@@ -41,6 +41,6 @@ for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
-vim.cmd "set colorcolumn=+1"             -- Make it obvious where 80 characters are
+vim.cmd "set colorcolumn=+1"               -- Make it obvious where 80 characters are
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]

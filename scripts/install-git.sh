@@ -4,18 +4,15 @@ set -euo pipefail
 
 # Check if git is build from source
 if [[ ! "$(which git)" == *"/usr/local/"* ]]; then
-  # Update dependencies
-  sudo apt -qq update
-
   # Install build prerequisites
-  sudo apt -qq install \
-               libz-dev \
-               libssl-dev \
-               libcurl4-gnutls-dev \
-               libexpat1-dev \
-               gettext \
-               cmake \
-               gcc
+  sudo apt-get -qq install \
+                   libz-dev \
+                   libssl-dev \
+                   libcurl4-gnutls-dev \
+                   libexpat1-dev \
+                   gettext \
+                   cmake \
+                   gcc
 
   # Switch to src folder
   pushd /usr/local/src

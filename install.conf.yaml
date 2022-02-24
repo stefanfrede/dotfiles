@@ -51,6 +51,9 @@
   - command: ./scripts/install-git.sh
     description: Installing Git
     stdout: true
+  - command: ./scripts/install-github-cli.sh
+    description: Installing Git
+    stdout: true
   - command: ./scripts/install-utilities.sh
     description: Installing utilities
     stdout: true

@@ -2,14 +2,19 @@
 
 set -euo pipefail
 
-if python3 -m pip --version >/dev/null; then
-  if nvr --version >/dev/null; then
-    echo "neovim-remote already installed."
-  else
-    pip3 install neovim-remote
-
-    echo "neovim-remote installed succesfully."
+# Check if Pip is installed
+if command -v python -m pip --version >/dev/null 2>&1; then
+  # Check if neovim-remote is installed
+  if ! command -v nvr >/dev/null 2>&1; then
+    # Install neovim-remote
+    if pip install neovim-remote; then
+      echo "Successfully installed neovim-remote."
+    else
+      echo "Failed to install neovim-remote."
+      exit 1
+    fi
   fi
 else
-  echo "ERROR: pip not found!"
+  echo "Pip not found!"
+  exit 1
 fi

@@ -1,10 +1,17 @@
-[init]
-  defaultBranch = main
+[user]
+  name = Stefan Frede
+  email = stefan@frede.dev
+  signingkey = DF19E1CAE149104A4CD7F8CAF494D54866659484
+[github]
+  user = stefanfrede
+[gpg]
+  program = /usr/bin/gpg
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
   pager = delta
-  editor = nvr --remote-wait-silent
+[init]
+  defaultBranch = main
 [commit]
   template = ~/.gitmessage
   gpgsign = true
@@ -15,27 +22,20 @@
 [pull]
   rebase = false
 [diff]
-  colorMoved = zebra
-  tool = nvr
-[difftool "nvr"]
-  cmd = nvr -s -d $LOCAL $REMOTE
-  prompt = false
+  colorMoved = default
 [merge]
-  ff = only
-  tool = nvr
-[mergetool "nvr"]
-  cmd = nvr -s -d $LOCAL $BASE $REMOTE $MERGED -c 'wincmd J | wincmd ='
+  conflictstyle = diff3
+  tool = nvim
+[mergetool]
+  prompt = false
+[mergetool "nvim"]
+  cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
+[interactive]
+  diffFilter = delta --color-only
 [rebase]
   autosquash = true
-[user]
-  name = Stefan Frede
-  email = stefan@frede.dev
-  signingkey = DF19E1CAE149104A4CD7F8CAF494D54866659484
-[github]
-  user = stefanfrede
-[gpg]
-  program = /usr/bin/gpg
 [delta]
+  navigate = true
   features = line-numbers
   syntax-theme = Nord
   minus-style = "#2e3440" "#bf616a"
@@ -51,11 +51,10 @@
   line-numbers-right-style = "#4c566a"
 [pretty]
   colored = format:%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr, %cn)%Creset
-[interactive]
-  diffFilter = delta --color-only
 [alias]
   pf = push --force-with-lease
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  sf = diff-tree --no-commit-id --name-only -r
   hist = log --graph --pretty=format:'%h %ad | %s%d [%an]' --date=short
   last = log -1 -p HEAD
   latest = show --name-only --oneline HEAD

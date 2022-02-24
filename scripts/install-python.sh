@@ -2,27 +2,39 @@
 
 set -euo pipefail
 
-if python3 --version >/dev/null; then
-  echo "Python3 already installed."
-else
+# Check if Python is installed
+if ! command -v python >/dev/null 2>&1; then
+  # Update dependencies
+  sudo apt update
+
+  # Install build prerequisites
+  sudo apt install \
+           wget build-essential \
+           libreadline-dev \
+           libncursesw5-dev \
+           libssl-dev \
+           libsqlite3-dev \
+           tk-dev \
+           libgdbm-dev \
+           libc6-dev \
+           libbz2-dev \
+           libffi-dev \
+           zlib1g-dev
+
+  # Switch to src folder
   pushd /usr/local/src
 
-  VERSION=3.10.2
-
-  # Clean-up folder
-  for p in Python-*; do
-    if [ -d "$p" ]; then
-      sudo rm -rf "$p"
+  # Remove artefacts
+  for a in Python-*; do
+    if [ -d "$a" ]; then
+      sudo rm -rf "$a"
     else
-      sudo rm -f "$p"
+      sudo rm -f "$a"
     fi
   done
 
-  # Update apt
-  sudo apt update && sudo apt upgrade -y
-
-  # Install prerequisites
-  sudo apt install wget build-essential libreadline-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev
+  # Set version number
+  VERSION=3.10.2
 
   # Download Python
   sudo wget -c https://www.python.org/ftp/python/$VERSION/Python-$VERSION.tar.xz
@@ -31,23 +43,22 @@ else
   sudo tar -Jxf Python-$VERSION.tar.xz
 
   # Change owner & cd into dir
-  sudo chown -R sfrede:sfrede Python-$VERSION
+  sudo chown -R ${USER:=$(/usr/bin/id -run)}:$USER Python-$VERSION
   cd Python-$VERSION
 
   # Configure source
   ./configure --enable-optimizations
 
-  # Build source
-  sudo make altinstall
-
-  if pyton3.10 --version >/dev/null; then
+  # Install Python
+  if sudo make altinstall >/dev/null; then
     # Make Python 3.10 default
     sudo update-alternatives --install /usr/bin/python python /usr/local/bin/python3.10 1
     sudo update-alternatives --install /usr/bin/pip pip /usr/local/bin/pip3.10 1
 
-    echo "Python $VERSION installed succesfully."
+    echo "Successfully installed Python $VERSION."
   else
-    echo "ERROR: Installing Python $VERSION failed!"
+    error "Failed to install Python $VERSION."
+    popd && exit 1
   fi
 
   popd

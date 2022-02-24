@@ -2,13 +2,10 @@
 
 set -euo pipefail
 
-# Update and upgrade dependencies
-sudo apt -qq update && sudo apt -qq upgrade -y
-
 # Check if xsel is installed
 if ! command -v xsel >/dev/null 2>&1; then
   # Install xsel
-  if sudo apt -qq install xsel -y; then
+  if sudo apt-get -qq install xsel -y; then
     echo "Successfully installed xsel."
   else
     echo "Failed to install xsel."
@@ -19,16 +16,13 @@ fi
 # Check if fish shell is installed
 # https://fishshell.com/
 if ! command -v fish >/dev/null 2>&1; then
-  # Update dependencies
-  sudo apt -qq update
-
   # Install build prerequisites
-  sudo apt -qq install \
-               build-essential \
-               cmake \
-               libncurses5-dev \
-               libncursesw5-dev \
-               gettext
+  sudo apt-get -qq install \
+                   build-essential \
+                   cmake \
+                   libncurses5-dev \
+                   libncursesw5-dev \
+                   gettext
 
   # Switch to src folder
   pushd /usr/local/src
@@ -106,13 +100,10 @@ if ! command -v exa >/dev/null 2>&1; then
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
   fi
 
-  # Update dependencies
-  sudo apt -qq update
-
   # Install build prerequisites
-  sudo apt -qq install \
-               libgit2 \
-               cmake
+  sudo apt-get -qq install \
+                   libgit2 \
+                   cmake
 
   # Switch to src folder
   pushd /usr/local/src
@@ -317,7 +308,7 @@ fi
 # https://mosh.org/
 if ! command -v mosh >/dev/null 2>&1; then
   # Install mosh
-  if sudo apt -qq install mosh -y; then
+  if sudo apt-get -qq install mosh -y; then
     echo "Successfully installed mosh."
   else
     echo "Failed to install mosh."

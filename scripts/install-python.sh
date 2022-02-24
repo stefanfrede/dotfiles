@@ -4,22 +4,19 @@ set -euo pipefail
 
 # Check if Python is installed
 if ! command -v python >/dev/null 2>&1; then
-  # Update dependencies
-  sudo apt update
-
   # Install build prerequisites
-  sudo apt install \
-           wget build-essential \
-           libreadline-dev \
-           libncursesw5-dev \
-           libssl-dev \
-           libsqlite3-dev \
-           tk-dev \
-           libgdbm-dev \
-           libc6-dev \
-           libbz2-dev \
-           libffi-dev \
-           zlib1g-dev
+  sudo apt-get -qq install \
+                   wget build-essential \
+                   libreadline-dev \
+                   libncursesw5-dev \
+                   libssl-dev \
+                   libsqlite3-dev \
+                   tk-dev \
+                   libgdbm-dev \
+                   libc6-dev \
+                   libbz2-dev \
+                   libffi-dev \
+                   zlib1g-dev
 
   # Switch to src folder
   pushd /usr/local/src

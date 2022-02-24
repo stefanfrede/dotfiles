@@ -4,23 +4,20 @@ set -euo pipefail
 
 # Check if Neovim is installed
 if ! command -v nvim >/dev/null 2>&1; then
-  # Update dependencies
-  sudo apt -qq update
-
   # Install build prerequisites
-  sudo apt -qq install \
-               ninja-build \
-               gettext \
-               libtool \
-               libtool-bin \
-               autoconf \
-               automake \
-               cmake \
-               g++ \
-               pkg-config \
-               unzip \
-               curl \
-               doxygen
+  sudo apt-get -qq install \
+                   ninja-build \
+                   gettext \
+                   libtool \
+                   libtool-bin \
+                   autoconf \
+                   automake \
+                   cmake \
+                   g++ \
+                   pkg-config \
+                   unzip \
+                   curl \
+                   doxygen
 
   # Switch to src folder
   pushd /usr/local/src

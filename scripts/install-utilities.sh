@@ -315,3 +315,14 @@ if ! command -v mosh >/dev/null 2>&1; then
     exit 1
   fi
 fi
+
+# Check if htop is installed
+if ! command -v htop >/dev/null 2>&1; then
+  # Install xsel
+  if sudo apt-get -qq install htop -y; then
+    echo "Successfully installed htop."
+  else
+    echo "Failed to install htop."
+    exit 1
+  fi
+fi

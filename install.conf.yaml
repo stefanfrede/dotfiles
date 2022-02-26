@@ -44,19 +44,19 @@
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - command: sudo apt-get -qq update
-    description: Update package index 
+    description: Update Package Index 
     stderr: true
   - command: sudo apt-get -qq upgrade -y
-    description: Upgrade installed packages 
+    description: Upgrade Installed Packages 
     stderr: true
   - command: ./scripts/install-git.sh
     description: Installing Git
     stdout: true
   - command: ./scripts/install-github-cli.sh
-    description: Installing Git
+    description: Installing GitHub CLI
     stdout: true
   - command: ./scripts/install-utilities.sh
-    description: Installing utilities
+    description: Installing Utilities
     stdout: true
   - command: ./scripts/install-python.sh
     description: Installing Python

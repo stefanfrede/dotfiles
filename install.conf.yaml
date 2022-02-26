@@ -5,9 +5,12 @@
       relink: true
 
 - clean:
-    - '~'
-    - '~/.config'
-    - '~/.local'
+    ~/:
+      force: true
+    ~/.config:
+      recursive: true
+    ~/.local:
+      recursive: true
 
 - link:
     # Bat
@@ -37,16 +40,19 @@
       path: nvim/lua/user/*
       relink: true
 
+    # ngrok
+    ~/.ngrok2/ngrok.yml: ngrok2/ngrok.yml
+
     # Tree-sitter
     ~/.local/bin/tree-sitter: tree-sitter/tree-sitter
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - command: sudo apt-get -qq update
-    description: Update dependencies 
+    description: Update package index 
     stderr: true
   - command: sudo apt-get -qq upgrade -y
-    description: Upgrade dependencies 
+    description: Upgrade installed packages 
     stderr: true
   - command: ./scripts/install-git.sh
     description: Installing Git
@@ -61,8 +67,11 @@
     description: Installing Python
     stdout: true
   - command: ./scripts/install-neovim.sh
-    description: Installing neovim
+    description: Installing Neovim
     stdout: true
-  - command: ./scripts/install-neovim-remote.sh
-    description: Installing neovim-remote
+  - command: ./scripts/install-virtualbox.sh
+    description: Installing VirtualBox
+    stdout: true
+  - command: ./scripts/install-resilio-sync.sh
+    description: Installing Resilio Sync
     stdout: true

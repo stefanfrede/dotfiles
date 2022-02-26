@@ -46,10 +46,10 @@
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - command: sudo apt-get -qq update
-    description: Update dependencies 
+    description: Update package index 
     stderr: true
   - command: sudo apt-get -qq upgrade -y
-    description: Upgrade dependencies 
+    description: Upgrade installed packages 
     stderr: true
   - command: ./scripts/install-git.sh
     description: Installing Git

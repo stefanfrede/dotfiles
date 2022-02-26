@@ -66,6 +66,7 @@
   - command: ./scripts/install-neovim.sh
     description: Installing neovim
     stdout: true
-  - command: ./scripts/install-neovim-remote.sh
-    description: Installing neovim-remote
+  - command: ./scripts/install-virtualbox.sh
+    description: Installing VirtualBox
+    stdout: true
     stdout: true

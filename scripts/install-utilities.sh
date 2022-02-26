@@ -382,3 +382,14 @@ if ! command -v htop >/dev/null 2>&1; then
     exit 1
   fi
 fi
+
+# Check if FileZilla is installed
+if ! command -v filezilla >/dev/null 2>&1; then
+  # Install xsel
+  if sudo apt-get -qq install filezilla -y; then
+    echo "Successfully installed FileZilla."
+  else
+    echo "Failed to install FileZilla."
+    exit 1
+  fi
+fi

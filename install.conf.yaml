@@ -37,6 +37,9 @@
       path: nvim/lua/user/*
       relink: true
 
+    # ngrok
+    ~/.ngrok2/ngrok.yml: ngrok2/ngrok.yml
+
     # Tree-sitter
     ~/.local/bin/tree-sitter: tree-sitter/tree-sitter
 

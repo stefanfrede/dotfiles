@@ -80,7 +80,7 @@ if ! command -v node >/dev/null 2>&1; then
   asdf install nodejs latest
   asdf global nodejs latest
 
-  npm i -g npm@latest
+  source ./install-global-node-modules.sh
 fi
 
 # Check if ruby is installed

@@ -9,8 +9,6 @@
       force: true
     ~/.config:
       recursive: true
-    ~/.local:
-      recursive: true
 
 - link:
     # Bat
@@ -42,9 +40,6 @@
 
     # ngrok
     ~/.ngrok2/ngrok.yml: ngrok2/ngrok.yml
-
-    # Tree-sitter
-    ~/.local/bin/tree-sitter: tree-sitter/tree-sitter
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

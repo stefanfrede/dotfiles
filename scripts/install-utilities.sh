@@ -48,7 +48,7 @@ if ! command -v fish >/dev/null 2>&1; then
     echo /usr/local/bin/fish | sudo tee -a /etc/shells
 
     # Use fish shell as default shell
-    chsh -s /usr/local/bin/fish
+    sudo chsh -s /usr/local/bin/fish $USER 
 
     echo "Successfully installed fish shell."
   else
@@ -148,7 +148,7 @@ if ! command -v bat >/dev/null 2>&1; then
   # Switch to src folder
   pushd /usr/local/src
 
-  # Check if there is already an exa folder
+  # Check if there is already an bat folder
   if [[ ! -d "bat" ]]; then
     # Git clone folder
     sudo git clone https://github.com/sharkdp/bat
@@ -185,7 +185,7 @@ if ! command -v fd >/dev/null 2>&1; then
   # Switch to src folder
   pushd /usr/local/src
 
-  # Check if there is already an exa folder
+  # Check if there is already an fd folder
   if [[ ! -d "fd" ]]; then
     # Git clone folder
     sudo git clone https://github.com/sharkdp/fd
@@ -222,7 +222,7 @@ if ! command -v rg >/dev/null 2>&1; then
   # Switch to src folder
   pushd /usr/local/src
 
-  # Check if there is already an exa folder
+  # Check if there is already an ripgrep folder
   if [[ ! -d "ripgrep" ]]; then
     # Git clone folder
     sudo git clone https://github.com/BurntSushi/ripgrep
@@ -259,7 +259,7 @@ if ! command -v rg >/dev/null 2>&1; then
   # Switch to src folder
   pushd /usr/local/src
 
-  # Check if there is already an exa folder
+  # Check if there is already an delta folder
   if [[ ! -d "delta" ]]; then
     # Git clone folder
     sudo git clone https://github.com/dandavison/delta.git
@@ -279,6 +279,43 @@ if ! command -v rg >/dev/null 2>&1; then
     echo "Successfully installed delta."
   else
     echo "Failed to install delta."
+    popd && exit 1
+  fi
+
+  popd
+fi
+
+# Check if tree-sitter is installed
+# https://tree-sitter.github.io/tree-sitter/
+if ! command -v tree-sitter >/dev/null 2>&1; then
+  # Install Rust
+  if ! command -v rustup >/dev/null 2>&1; then
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  fi
+
+  # Switch to src folder
+  pushd /usr/local/src
+
+  # Check if there is already an tree-sitter folder
+  if [[ ! -d "tree-sitter" ]]; then
+    # Git clone folder
+    sudo git clone https://github.com/tree-sitter/tree-sitter.git 
+
+    # Change owner
+    sudo chown -R ${USER:=$(/usr/bin/id -run)}:$USER tree-sitter
+  fi
+
+  # cd into folder and get the latest updates
+  cd tree-sitter && git pull >/dev/null 2>&1
+
+  # Install tree-sitter
+  if cargo build --release >/dev/null; then
+    # Copy the executable
+    sudo cp target/release/tree-sitter /usr/local/bin
+
+    echo "Successfully installed tree-sitter."
+  else
+    echo "Failed to install tree-sitter."
     popd && exit 1
   fi
 

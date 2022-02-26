@@ -85,11 +85,16 @@ fi
 
 # Check if ruby is installed
 if ! command -v ruby >/dev/null 2>&1; then
+  # Set version number
+  VERSION=3.1.1
+
   asdf update
 
   asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
-  asdf install ruby latest
-  asdf global ruby latest
+  asdf install ruby $VERSION
+  asdf global ruby $VERSION
+
+  source ./install-global-ruby-gems.sh
 fi
 
 # Check if exa is installed

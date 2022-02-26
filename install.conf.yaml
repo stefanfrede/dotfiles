@@ -40,6 +40,9 @@
     # ngrok
     ~/.ngrok2/ngrok.yml: ngrok2/ngrok.yml
 
+    # Resilio Sync
+    ~/.config/rslsync/sync.conf: rslsync/sync.conf
+
     # Tree-sitter
     ~/.local/bin/tree-sitter: tree-sitter/tree-sitter
 
@@ -69,4 +72,6 @@
   - command: ./scripts/install-virtualbox.sh
     description: Installing VirtualBox
     stdout: true
+  - command: ./scripts/install-resilio-sync.sh
+    description: Installing Resilio Sync
     stdout: true

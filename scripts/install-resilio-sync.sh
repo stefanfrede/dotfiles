@@ -26,8 +26,6 @@ if ! command -v rslsync >/dev/null 2>&1; then
     mkdir ~/Dropbox
     sudo chmod g+rw ~/Dropbox
 
-    rslsync --config ~/.config/rslsync/sync.conf
-
     echo "Successfully installed Resilio Sync."
   else
     error "Failed to install Resilio Sync."

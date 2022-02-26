@@ -5,9 +5,12 @@
       relink: true
 
 - clean:
-    - '~'
-    - '~/.config'
-    - '~/.local'
+    ~/:
+      force: true
+    ~/.config:
+      recursive: true
+    ~/.local:
+      recursive: true
 
 - link:
     # Bat
@@ -40,9 +43,6 @@
     # ngrok
     ~/.ngrok2/ngrok.yml: ngrok2/ngrok.yml
 
-    # Resilio Sync
-    ~/.config/rslsync/sync.conf: rslsync/sync.conf
-
     # Tree-sitter
     ~/.local/bin/tree-sitter: tree-sitter/tree-sitter
 
@@ -67,7 +67,7 @@
     description: Installing Python
     stdout: true
   - command: ./scripts/install-neovim.sh
-    description: Installing neovim
+    description: Installing Neovim
     stdout: true
   - command: ./scripts/install-virtualbox.sh
     description: Installing VirtualBox

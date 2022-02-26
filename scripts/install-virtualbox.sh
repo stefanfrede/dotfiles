@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-# Check if virtualbox is installed
+# Check if VirtualBox is installed
 if ! command -v virtualbox >/dev/null 2>&1; then
   # Install build prerequisites
   sudo apt-get install software–properties–common

@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-# Check if virtualbox is installed
+# Check if Resilio Sync is installed
 if ! command -v rslsync >/dev/null 2>&1; then
   # Add public key
   curl -L https://linux-packages.resilio.com/resilio-sync/key.asc | sudo apt-key add - 

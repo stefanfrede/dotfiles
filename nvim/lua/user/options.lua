@@ -43,5 +43,7 @@ for k, v in pairs(options) do
 end
 
 vim.cmd "set colorcolumn=+1"               -- Make it obvious where 80 characters are
+vim.cmd "set foldmethod=expr"              -- Tree-sitter based folding
+vim.cmd "set foldexpr=nvim_treesitter#foldexpr()"
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]

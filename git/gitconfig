@@ -55,7 +55,7 @@
   s = status
   co = checkout
   cob = checkout -b
-  dev = branch -D
+  del = branch -D
   save = "!git add -A; git commit ."
   undo = reset HEAD~1 --mixed
   res = !git reset --hard HEAD

@@ -59,6 +59,7 @@ return packer.startup(function(use)
   use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
 	use("andymass/vim-matchup")
   use("ggandor/lightspeed.nvim")
+	use("norcalli/nvim-colorizer.lua") -- A high-performance color highlighter
 	use("tpope/vim-repeat")
 	use("tpope/vim-surround")
 	use("tpope/vim-unimpaired")

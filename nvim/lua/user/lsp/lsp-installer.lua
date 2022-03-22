@@ -21,6 +21,11 @@ lsp_installer.on_server_ready(function(server)
 	 	opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
 	 end
 
+	 if server.name == "volar" then
+	 	local volar_opts = require("user.lsp.settings.volar")
+	 	opts = vim.tbl_deep_extend("force", volar_opts, opts)
+	 end
+
 	-- This setup() function is exactly the same as lspconfig's setup function.
 	-- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 	server:setup(opts)

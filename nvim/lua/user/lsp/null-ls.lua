@@ -11,9 +11,23 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
 	debug = false,
 	sources = {
-		formatting.prettier,
+		formatting.eslint.with({
+			prefer_local = "node_modules/.bin",
+		}),
+		formatting.prettier.with({
+			prefer_local = "node_modules/.bin",
+		}),
+		formatting.stylelint.with({
+			filetypes = { "scss", "less", "css", "sass", "vue" },
+			prefer_local = "node_modules/.bin",
+		}),
 		formatting.stylua,
-		diagnostics.eslint,
-		diagnostics.stylelint,
+		diagnostics.eslint.with({
+			prefer_local = "node_modules/.bin",
+		}),
+		diagnostics.stylelint.with({
+			filetypes = { "scss", "less", "css", "sass", "vue" },
+			prefer_local = "node_modules/.bin",
+		}),
 	},
 })

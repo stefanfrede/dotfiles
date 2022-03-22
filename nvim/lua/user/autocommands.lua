@@ -9,6 +9,7 @@ vim.cmd [[
 
   augroup _git
     autocmd!
+    autocmd FileType gitcommit setlocal textwidth=72
     autocmd FileType gitcommit setlocal wrap
     autocmd FileType gitcommit setlocal spell
     autocmd FileType gitcommit,gitrebase,gitconfig set bufhidden=delete

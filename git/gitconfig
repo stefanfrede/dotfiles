@@ -70,3 +70,5 @@
   overview = log --all --since='2 weeks' --oneline --no-merges
   recent = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
   stats = shortlog -sn --all --no-merges
+  forget = update-index --skip-worktree
+  remember = update-index --no-skip-worktree

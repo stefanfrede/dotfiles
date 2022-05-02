@@ -25,6 +25,7 @@
   colorMoved = default
 [merge]
   conflictstyle = diff3
+  ff = only
   tool = nvim
 [mergetool]
   prompt = false
@@ -34,6 +35,8 @@
   diffFilter = delta --color-only
 [rebase]
   autosquash = true
+[rerere]
+	enabled = 1
 [delta]
   navigate = true
   features = line-numbers
@@ -52,7 +55,7 @@
 [pretty]
   colored = format:%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr, %cn)%Creset
 [alias]
-  s = status
+  st = status
   co = checkout
   cob = checkout -b
   del = branch -D

@@ -53,7 +53,7 @@ return packer.startup(function(use)
 	use("nvim-lualine/lualine.nvim")
 	use({
 		"akinsho/toggleterm.nvim",
-		tag = "v1.*",
+		tag = "v2.*",
 		config = function()
 			require("toggleterm").setup()
 		end,
@@ -90,6 +90,7 @@ return packer.startup(function(use)
 	use("neovim/nvim-lspconfig") -- enable LSP
 	use("williamboman/nvim-lsp-installer") -- simple to use language server installer
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
+	use("RRethy/vim-illuminate")
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")

@@ -1,12 +1,11 @@
-local opts = { noremap = true, silent = true }
-
 -- Shorten function name
-local keymap = vim.api.nvim_set_keymap
+local keymap = vim.keymap.set
+-- Silent keymap option
+local opts = { silent = true }
 
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
 
 -- Modes
 --   normal_mode = "n",
@@ -30,18 +29,25 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<S-Right>", ":bnext<CR>", opts)
-keymap("n", "<S-Left>", ":bprevious<CR>", opts)
+keymap("n", "<S-l>", ":bnext<CR>", opts)
+keymap("n", "<S-h>", ":bprevious<CR>", opts)
+
+-- Close buffers
+keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
+
+-- Clear highlights
+keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
--- Move text up and down
-keymap("v", "p", '"_dP', opts)
+-- Plugins --
 
--- Visual Block --
+-- NvimTree
+keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+
 -- Telescope --
 keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
@@ -49,5 +55,6 @@ keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
 keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", opts)
 keymap("n", "<leader>fp", "<cmd>Telescope projects<cr>", opts)
 
--- Nvimtree --
-keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+-- Comment
+keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
+keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>')

@@ -1,17 +1,17 @@
-local status_ok, lightspeed = pcall(require, "lightspeed")
+local status_ok, leap = pcall(require, "leap")
 if not status_ok then
 	return
 end
 
-lightspeed.setup({
-	ignore_case = false,
-	exit_after_idle_msecs = { unlabeled = 1000, labeled = nil },
-	--- s/x ---
-	jump_to_unique_chars = { safety_timeout = 400 },
-	match_only_the_start_of_same_char_seqs = true,
-	force_beacons_into_match_width = false,
-	-- Display characters in a custom way in the highlighted matches.
-	substitute_chars = { ["\r"] = "¬" },
+leap.set_default_keymaps()
+
+leap.setup({
+	max_aot_targets = nil,
+	highlight_unlabeled = false,
+	case_sensitive = false,
+	-- Sets of characters that should match each other.
+	-- Obvious candidates are braces and quotes ('([{', ')]}', '`"\'').
+	equivalence_classes = { " \t\r\n" },
 	-- Leaving the appropriate list empty effectively disables "smart" mode,
 	-- and forces auto-jump to be on or off.
 	safe_labels = { "s", "f", "n", "u", "t", "/", "S", "F", "N", "L", "H", "M", "U", "G", "T", "?", "Z" },
@@ -64,11 +64,12 @@ lightspeed.setup({
 		"Z",
 	},
 	-- These keys are captured directly by the plugin at runtime.
+	-- (For `prev_match`, I suggest <s-enter> if possible in the terminal/GUI.)
 	special_keys = {
-		next_match_group = "<space>",
-		prev_match_group = "<tab>",
+		repeat_search = "<enter>",
+		next_match = "<enter>",
+		prev_match = "<tab>",
+		next_group = "<space>",
+		prev_group = "<tab>",
 	},
-	--- f/t ---
-	limit_ft_matches = 4,
-	repeat_ft_with_target_char = false,
 })

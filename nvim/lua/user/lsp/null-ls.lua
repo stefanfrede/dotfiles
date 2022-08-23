@@ -18,7 +18,7 @@ null_ls.setup({
 			prefer_local = "node_modules/.bin",
 		}),
 		formatting.stylelint.with({
-			filetypes = { "scss", "less", "css", "sass", "vue" },
+			filetypes = { "css", "sass", "scss", "vue", "less" },
 			prefer_local = "node_modules/.bin",
 		}),
 		formatting.stylua,
@@ -26,7 +26,7 @@ null_ls.setup({
 			prefer_local = "node_modules/.bin",
 		}),
 		diagnostics.stylelint.with({
-			filetypes = { "scss", "less", "css", "sass", "vue" },
+			filetypes = { "css", "sass", "scss", "vue", "less" },
 			prefer_local = "node_modules/.bin",
 		}),
 	},

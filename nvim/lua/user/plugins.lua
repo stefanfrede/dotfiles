@@ -65,7 +65,6 @@ return packer.startup(function(use)
 	use("tpope/vim-unimpaired")
 
 	-- Colorschemes
-	use("shaunsingh/nord.nvim")
 	use("folke/tokyonight.nvim")
 
 	-- cmp plugins

@@ -13,6 +13,7 @@
 - link:
     # Bat
     ~/.config/bat/config: bat/config
+    ~/.config/bat/themes: bat/themes
 
     # Fish shell config files
     ~/.config/fish/config.fish: fish/config.fish

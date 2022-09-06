@@ -40,18 +40,18 @@
 [delta]
   navigate = true
   features = line-numbers
-  syntax-theme = Nord
-  minus-style = "#2e3440" "#bf616a"
-  minus-emph-style = "#2e3440" "#81a1c1"
-  plus-style = "#2e3440" "#a3be8c"
-  plus-emph-style = "#2e3440" "#81a1c1"
+  syntax-theme = Tokyo-Night
+  minus-style = "#8c4351" "#1a1b26"
+  minus-emph-style = "#f7768e" "#1a1b26"
+  plus-style = "#33635c" "#1a1b26"
+  plus-emph-style = "#73daca" "#1a1b26"
 [delta "line-numbers"]
   line-numbers = true
-  line-numbers-minus-style = "#bf616a"
-  line-numbers-plus-style = "#a3be8c"
-  line-numbers-zero-style = "#4c566a"
-  line-numbers-left-style = "#4c566a"
-  line-numbers-right-style = "#4c566a"
+  line-numbers-minus-style = "#8c4351"
+  line-numbers-plus-style = "#33635c"
+  line-numbers-zero-style = "#565f89"
+  line-numbers-left-style = "#565f89"
+  line-numbers-right-style = "#565f89"
 [pretty]
   colored = format:%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr, %cn)%Creset
 [alias]

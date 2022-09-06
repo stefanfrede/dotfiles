@@ -51,13 +51,7 @@ return packer.startup(function(use)
 	use({ "akinsho/bufferline.nvim", tag = "v2.*", requires = "kyazdani42/nvim-web-devicons" })
 	use("moll/vim-bbye")
 	use("nvim-lualine/lualine.nvim")
-	use({
-		"akinsho/toggleterm.nvim",
-		tag = "v2.*",
-		config = function()
-			require("toggleterm").setup()
-		end,
-	})
+	use({ "akinsho/toggleterm.nvim", tag = "*" })
 	use("ahmedkhalf/project.nvim")
 	use("lewis6991/impatient.nvim")
 	use("lukas-reineke/indent-blankline.nvim")
@@ -72,7 +66,7 @@ return packer.startup(function(use)
 
 	-- Colorschemes
 	use("shaunsingh/nord.nvim")
-  use("folke/tokyonight.nvim")
+	use("folke/tokyonight.nvim")
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin

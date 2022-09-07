@@ -51,28 +51,21 @@ return packer.startup(function(use)
 	use({ "akinsho/bufferline.nvim", tag = "v2.*", requires = "kyazdani42/nvim-web-devicons" })
 	use("moll/vim-bbye")
 	use("nvim-lualine/lualine.nvim")
-	use({
-		"akinsho/toggleterm.nvim",
-		tag = "v2.*",
-		config = function()
-			require("toggleterm").setup()
-		end,
-	})
+	use({ "akinsho/toggleterm.nvim", tag = "*" })
 	use("ahmedkhalf/project.nvim")
 	use("lewis6991/impatient.nvim")
 	use("lukas-reineke/indent-blankline.nvim")
 	use("goolord/alpha-nvim")
 	use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
 	use("andymass/vim-matchup")
-	use("ggandor/lightspeed.nvim")
+	use("ggandor/leap.nvim")
 	use("norcalli/nvim-colorizer.lua") -- A high-performance color highlighter
 	use("tpope/vim-repeat")
 	use("tpope/vim-surround")
 	use("tpope/vim-unimpaired")
 
 	-- Colorschemes
-	use("shaunsingh/nord.nvim")
-  use("folke/tokyonight.nvim")
+	use("folke/tokyonight.nvim")
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin

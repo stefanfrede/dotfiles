@@ -40,7 +40,7 @@
       relink: true
 
     # ngrok
-    # ~/.ngrok2/ngrok.yml: ngrok2/ngrok.yml
+    ~/.ngrok2/ngrok.yml: ngrok2/ngrok.yml
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

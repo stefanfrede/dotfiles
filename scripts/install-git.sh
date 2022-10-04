@@ -27,7 +27,7 @@ if [[ ! "$(which git)" == *"/usr/local/"* ]]; then
   done
 
   # Set version number
-  VERSION=2.35.1
+  VERSION=2.38.0
 
   # Download Git
   sudo curl -o git.tar.gz https://mirrors.edge.kernel.org/pub/software/scm/git/git-$VERSION.tar.gz

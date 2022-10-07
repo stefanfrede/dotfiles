@@ -35,7 +35,7 @@ if ! command -v nvim >/dev/null 2>&1; then
   cd neovim && git checkout master && git pull && git checkout stable
 
   # Clean-up build deps and build source
-  make disclean && make CMAKE_BUILD_TYPE=RelWithDebInfo
+  make distclean && make CMAKE_BUILD_TYPE=RelWithDebInfo
 
   # Install Neovim
   if sudo make install >/dev/null; then

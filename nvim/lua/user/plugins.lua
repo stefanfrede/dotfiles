@@ -58,9 +58,9 @@ return packer.startup(function(use)
 	use("goolord/alpha-nvim")
 	use("norcalli/nvim-colorizer.lua") -- A high-performance color highlighter
 	use("ggandor/leap.nvim") -- A general-purpose motion plugin
-  use("tpope/vim-repeat")
-  use("tpope/vim-surround")
-  use("tpope/vim-unimpaired")
+	use("tpope/vim-repeat")
+	use("tpope/vim-surround")
+	use("tpope/vim-unimpaired")
 
 	-- Colorschemes
 	use("folke/tokyonight.nvim")
@@ -84,6 +84,7 @@ return packer.startup(function(use)
 	use("williamboman/mason-lspconfig.nvim")
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 	use("RRethy/vim-illuminate")
+	use("zbirenbaum/copilot.lua")
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")

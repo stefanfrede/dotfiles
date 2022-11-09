@@ -42,10 +42,10 @@ packer.init({
 return packer.startup(function(use)
 	-- My plugins here
 	use("wbthomason/packer.nvim") -- Have packer manage itself
-	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
 	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
 	use("numToStr/Comment.nvim") -- Easily comment stuff
+	use("JoosepAlviste/nvim-ts-context-commentstring")
 	use("kyazdani42/nvim-web-devicons")
 	use("kyazdani42/nvim-tree.lua")
 	use({ "akinsho/bufferline.nvim", tag = "v2.*", requires = "kyazdani42/nvim-web-devicons" })
@@ -56,13 +56,11 @@ return packer.startup(function(use)
 	use("lewis6991/impatient.nvim")
 	use("lukas-reineke/indent-blankline.nvim")
 	use("goolord/alpha-nvim")
-	use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
-	use("andymass/vim-matchup")
-	use("ggandor/leap.nvim")
 	use("norcalli/nvim-colorizer.lua") -- A high-performance color highlighter
-	use("tpope/vim-repeat")
-	use("tpope/vim-surround")
-	use("tpope/vim-unimpaired")
+	use("ggandor/leap.nvim") -- A general-purpose motion plugin
+  use("tpope/vim-repeat")
+  use("tpope/vim-surround")
+  use("tpope/vim-unimpaired")
 
 	-- Colorschemes
 	use("folke/tokyonight.nvim")
@@ -82,23 +80,19 @@ return packer.startup(function(use)
 
 	-- LSP
 	use("neovim/nvim-lspconfig") -- enable LSP
-	use("williamboman/nvim-lsp-installer") -- simple to use language server installer
+	use("williamboman/mason.nvim")
+	use("williamboman/mason-lspconfig.nvim")
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 	use("RRethy/vim-illuminate")
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")
-	use({
-		"nvim-telescope/telescope-fzf-native.nvim",
-		run = "make",
-	})
 
 	-- Treesitter
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 	})
-	use("JoosepAlviste/nvim-ts-context-commentstring")
 
 	-- Git
 	use("lewis6991/gitsigns.nvim")

@@ -3,17 +3,16 @@ if not status_ok then
 	return
 end
 
-leap.set_default_keymaps()
+leap.add_default_mappings()
 
+--[[
 leap.setup({
-	max_aot_targets = nil,
-	highlight_unlabeled = false,
-	case_sensitive = false,
-	-- Sets of characters that should match each other.
-	-- Obvious candidates are braces and quotes ('([{', ')]}', '`"\'').
-	equivalence_classes = { " \t\r\n" },
-	-- Leaving the appropriate list empty effectively disables "smart" mode,
-	-- and forces auto-jump to be on or off.
+  max_phase_one_targets = nil,
+  highlight_unlabeled_phase_one_targets = false,
+  max_highlighted_traversal_targets = 10,
+  case_sensitive = false,
+  equivalence_classes = { ' \t\r\n', },
+  substitute_chars = {},
 	safe_labels = { "s", "f", "n", "u", "t", "/", "S", "F", "N", "L", "H", "M", "U", "G", "T", "?", "Z" },
 	labels = {
 		"s",
@@ -63,13 +62,15 @@ leap.setup({
 		"?",
 		"Z",
 	},
-	-- These keys are captured directly by the plugin at runtime.
-	-- (For `prev_match`, I suggest <s-enter> if possible in the terminal/GUI.)
-	special_keys = {
-		repeat_search = "<enter>",
-		next_match = "<enter>",
-		prev_match = "<tab>",
-		next_group = "<space>",
-		prev_group = "<tab>",
-	},
+  special_keys = {
+    repeat_search = '<enter>',
+    next_phase_one_target = '<enter>',
+    next_target = {'<enter>', ';'},
+    prev_target = {'<tab>', ','},
+    next_group = '<space>',
+    prev_group = '<tab>',
+    multi_accept = '<enter>',
+    multi_revert = '<backspace>',
+  },
 })
+]]

@@ -40,7 +40,7 @@
 [delta]
   navigate = true
   features = line-numbers
-  syntax-theme = Tokyo-Night
+  syntax-theme = tokyonight_night
   minus-style = "#8c4351" "#1a1b26"
   minus-emph-style = "#f7768e" "#1a1b26"
   plus-style = "#33635c" "#1a1b26"

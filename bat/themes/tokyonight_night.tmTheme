@@ -1,13 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>author</key>
-	<string>Kristi Russell (http://github.com/enkia)</string>
+	<string>Folke Lemaitre (http://github.com/folke)</string>
 	<key>colorSpaceName</key>
 	<string>sRGB</string>
 	<key>name</key>
-	<string>Enki-Tokyo-Night</string>
+	<string>TokyoNight</string>
 	<key>semanticClass</key>
 	<string>enki.theme.tokyo</string>
 	<key>settings</key>
@@ -37,10 +36,6 @@
 				<string>#4f4f5e</string>
 				<key>lineHighlight</key>
 				<string>#00000030</string>
-				<key>phantomCss</key>
-				<string>&lt;![CDATA[ html { position: relative; } ]]&gt;</string>
-				<key>popupCss</key>
-				<string>&lt;![CDATA[ html { color: #B376B3; background-color: #2b2d3a; padding: 10px; } a { color: #6189BB; line-height: 1.2; text-decoration: none; } .error, .deleted { color: #50B4DC; } .success, .inserted { color: #9DBA72; } .warning, .modified { color: #ffa300; } ]]&gt;</string>
 				<key>selection</key>
 				<string>#9D599D40</string>
 				<key>selectionBorder</key>
@@ -72,7 +67,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#444b6a</string>
+				<string>#565f89</string>
 			</dict>
 		</dict>
 		<dict>
@@ -83,7 +78,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#7982a9</string>
+				<string>#565f89</string>
 			</dict>
 		</dict>
 		<dict>
@@ -129,7 +124,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#ff5370</string>
+				<string>#f7768e</string>
 			</dict>
 		</dict>
 		<dict>
@@ -749,7 +744,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#449dab</string>
+				<string>${git.add}</string>
 			</dict>
 		</dict>
 		<dict>
@@ -760,7 +755,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#914c54</string>
+				<string>${git.delete}</string>
 			</dict>
 		</dict>
 		<dict>
@@ -771,7 +766,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#6183bb</string>
+				<string>${git.change}</string>
 			</dict>
 		</dict>
 		<dict>

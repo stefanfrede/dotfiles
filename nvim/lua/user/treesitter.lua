@@ -5,7 +5,6 @@ end
 
 configs.setup({
 	ensure_installed = {
-		"astro",
 		"bash",
 		"comment",
 		"css",
@@ -19,27 +18,26 @@ configs.setup({
 		"lua",
 		"regex",
 		"scss",
+		"toml",
 		"typescript",
 		"vim",
 		"vue",
 	}, -- one of "all", or a list of languages
-	sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
 	ignore_install = { "" }, -- List of parsers to ignore installing
-	autopairs = {
-		enable = true,
-	},
+	sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
 	highlight = {
 		enable = true, -- false will disable the whole extension
 		disable = { "" }, -- list of language that will be disabled
-		additional_vim_regex_highlighting = true,
 	},
-	indent = { enable = true, disable = { "yaml" } },
+	autopairs = {
+		enable = true,
+	},
+	indent = {
+    enable = true,
+    disable = { "yaml" },
+  },
 	context_commentstring = {
 		enable = true,
 		enable_autocmd = false,
-	},
-	matchup = {
-		enable = true,
-		disable = { "" }, -- list of language that will be disabled
 	},
 })

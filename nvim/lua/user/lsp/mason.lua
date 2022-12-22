@@ -1,6 +1,7 @@
 local servers = {
 	"bashls",
 	"cssls",
+	"denols",
 	"html",
 	"jsonls",
 	"sumneko_lua",

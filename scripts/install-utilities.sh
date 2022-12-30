@@ -346,25 +346,6 @@ if ! command -v starship >/dev/null 2>&1; then
   sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 fi
 
-# Check if ngrok is installed
-#https://ngrok.com/ 
-# if ! command -v ngrok >/dev/null 2>&1; then
-#   pushd ~/Downloads
-#
-#   # Download nkrok
-#   curl -o ngrok.tgz https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.tgz
-#
-#   # Install nkrok
-#   if sudo tar xvzf ngrok.tgz -C /usr/local/bin >/dev/null; then
-#     echo "Successfully installed ngrok."
-#   else
-#     echo "Failed to install ngrok."
-#     popd & exit 1
-#   fi
-#
-#   popd
-# fi
-
 # Check if mosh is installed
 # https://mosh.org/
 if ! command -v mosh >/dev/null 2>&1; then

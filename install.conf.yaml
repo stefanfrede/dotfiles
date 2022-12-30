@@ -39,9 +39,6 @@
       path: nvim/lua/user/*
       relink: true
 
-    # ngrok
-    ~/.ngrok2/ngrok.yml: ngrok2/ngrok.yml
-
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - command: sudo apt-get -qq update
@@ -67,7 +64,4 @@
     stdout: true
   - command: ./scripts/install-virtualbox.sh
     description: Installing VirtualBox
-    stdout: true
-  - command: ./scripts/install-resilio-sync.sh
-    description: Installing Resilio Sync
     stdout: true

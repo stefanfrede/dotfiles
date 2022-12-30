@@ -387,3 +387,9 @@ if ! command -v htop >/dev/null 2>&1; then
     exit 1
   fi
 fi
+
+# Check if deno is installed
+# https://deno.land/
+if ! command -v deno >/dev/null 2>&1; then
+  sh -c "$(curl -fsSL https://deno.land/x/install/install.sh)"
+fi

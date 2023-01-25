@@ -15,6 +15,7 @@ gitsigns.setup({
 			numhl = "GitSignsChangeNr",
 			linehl = "GitSignsChangeLn",
 		},
+    untracked    = { hl = 'GitSignsAdd'   , text = '┆', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'    },
 	},
 	signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
 	numhl = false, -- Toggle with `:Gitsigns toggle_numhl`
@@ -33,9 +34,6 @@ gitsigns.setup({
 		ignore_whitespace = false,
 	},
 	current_line_blame_formatter = "<author>, <author_time:%Y-%m-%d> - <summary>",
-	current_line_blame_formatter_opts = {
-		relative_time = false,
-	},
 	sign_priority = 6,
 	update_debounce = 100,
 	status_formatter = nil, -- Use default

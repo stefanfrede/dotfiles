@@ -4,7 +4,7 @@ local servers = {
 	"denols",
 	"html",
 	"jsonls",
-	"sumneko_lua",
+	"lua_ls",
 	"tsserver",
 	"volar",
 	"yamlls",

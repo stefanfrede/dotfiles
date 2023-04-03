@@ -165,7 +165,7 @@ if ! command -v bat >/dev/null 2>&1; then
   # cd into folder and get the latest updates
   cd bat && git pull >/dev/null 2>&1
 
-  # Install fd
+  # Install bat
   if cargo build --release >/dev/null; then
     # Copy the executable
     sudo cp target/release/bat /usr/local/bin
@@ -325,6 +325,18 @@ if ! command -v tree-sitter >/dev/null 2>&1; then
   fi
 
   popd
+fi
+
+# Check if stylua is installed
+# https://github.com/JohnnyMorganz/StyLua/
+if ! command -v stylua >/dev/null 2>&1; then
+  # Install Rust
+  if ! command -v rustup >/dev/null 2>&1; then
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  fi
+
+  # Install stylua
+  cargo install stylua --features lua54
 fi
 
 # Check if fzf is installed

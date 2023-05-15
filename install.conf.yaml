@@ -33,10 +33,10 @@
 
     # Neovim config files
     ~/.config/nvim/init.lua: nvim/init.lua
-    ~/.config/nvim/lua/user/:
+    ~/.config/nvim/lua/:
       create: true
       glob: true
-      path: nvim/lua/user/*
+      path: nvim/lua/*
       relink: true
 
 - shell:

@@ -1,7 +1,8 @@
 local M = {
   "nvim-treesitter/nvim-treesitter",
-  commit = "226c1475a46a2ef6d840af9caa0117a439465500",
-  event = "BufReadPost",
+  version = false, -- last release is way too old and doesn't work on Windows
+  build = ":TSUpdate",
+  event = { "BufReadPost", "BufNewFile" },
   dependencies = {
     {
       "JoosepAlviste/nvim-ts-context-commentstring",

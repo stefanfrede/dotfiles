@@ -1,7 +1,12 @@
 local M = {
   "zbirenbaum/copilot.lua",
   commit = "653bbdc44cd569a5fd0617e5a9d3df2b1359e230",
-  event = "InsertEnter",
+  cmd = "Copilot",
+  build = ":Copilot auth",
+  opts = {
+    suggestion = { enabled = false },
+    panel = { enabled = false },
+  },
 }
 
 function M.config()

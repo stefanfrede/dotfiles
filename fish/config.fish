@@ -7,6 +7,9 @@ starship init fish | source
 # fzf.fish
 # https://github.com/PatrickF1/fzf.fish
 
+# Go
+fish_add_path /usr/local/go/bin
+
 # Change the directory preview command to use exa
 set fzf_preview_dir_cmd exa --all --color=always
 

@@ -5,6 +5,14 @@ return {
       servers = {
         tailwindcss = {
           filetypes_exclude = { "markdown" },
+          settings = {
+            tailwindCSS = {
+              lint = {
+                invalidTailwindDirective = "ignore",
+                invalidApply = "ignore",
+              },
+            },
+          },
         },
       },
       setup = {

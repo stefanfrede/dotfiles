@@ -13,9 +13,8 @@ if command -v node >/dev/null 2>&1; then
 	npm i -g prettier
 	npm i -g stylelint
 	npm i -g tern
-	# Install Build Tools
+	# Install CLIs
 	npm i -g netlify-cli
 	npm i -g @sanity/cli
-	# Install Daemon Process Manager
-	npm i -g pm2@latest
+	npm i -g storyblok
 fi

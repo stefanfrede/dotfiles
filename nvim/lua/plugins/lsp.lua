@@ -11,23 +11,4 @@ return {
       },
     },
   },
-  {
-    "neovim/nvim-lspconfig",
-    ---@class PluginLspOpts
-    opts = {
-      ---@type lspconfig.options
-      servers = {
-        -- cssls will be automatically installed with mason and loaded with lspconfig
-        cssls = {
-          settings = {
-            css = {
-              lint = {
-                unknownAtRules = "ignore",
-              },
-            },
-          },
-        },
-      },
-    },
-  },
 }

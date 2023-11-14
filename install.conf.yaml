@@ -39,6 +39,9 @@
       path: nvim/lua/*
       relink: true
 
+    # WezTerm config file
+    ~/.wezterm.lua: wezterm/wezterm.lua
+
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - command: sudo apt-get -qq update

@@ -56,6 +56,8 @@
   - command: ./scripts/install-github-cli.sh
     description: Installing GitHub CLI
     stdout: true
+  - command: ./scripts/install-lazygit.sh
+    description: Installing lazygit
     stdout: true
   - command: ./scripts/install-python.sh
     description: Installing Python

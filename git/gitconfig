@@ -23,6 +23,13 @@
   rebase = false
 [diff]
   colorMoved = default
+  tool = difftastic
+[difftool]
+  prompt = false
+[difftool "difftastic"]
+  cmd = difft "$LOCAL" "$REMOTE"
+[pager]
+  difftool = true
 [merge]
   conflictstyle = diff3
   ff = only
@@ -75,3 +82,5 @@
   stats = shortlog -sn --all --no-merges
   forget = update-index --skip-worktree
   remember = update-index --no-skip-worktree
+  dft = difftool
+  dlog = "!f() { GIT_EXTERNAL_DIFF=difft git log -p --ext-diff $@; }; f"

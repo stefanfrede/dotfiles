@@ -116,7 +116,7 @@ if ! command -v exa >/dev/null 2>&1; then
 	# Check if there is already an exa folder
 	if [[ ! -d "exa" ]]; then
 		# Git clone folder
-		git clone git clone https://github.com/ogham/exa.git
+		sudo git clone https://github.com/ogham/exa.git
 
 		# Change owner
 		sudo chown -R ${USER:=$(/usr/bin/id -run)}:$USER exa
@@ -276,7 +276,7 @@ if ! command -v rg >/dev/null 2>&1; then
 	# cd into folder and get the latest updates
 	cd delta && git pull >/dev/null 2>&1
 
-	# Install fd
+	# Install delta
 	if cargo build --release >/dev/null; then
 		# Copy the executable
 		sudo cp target/release/delta /usr/local/bin
@@ -284,6 +284,43 @@ if ! command -v rg >/dev/null 2>&1; then
 		echo "Successfully installed delta."
 	else
 		echo "Failed to install delta."
+		popd && exit 1
+	fi
+
+	popd
+fi
+
+# Check if difftastic is installed
+# https://difftastic.wilfred.me.uk
+if ! command -v difft >/dev/null 2>&1; then
+	# Install Rust
+	if ! command -v rustup >/dev/null 2>&1; then
+		curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+	fi
+
+	# Switch to src folder
+	pushd /usr/local/src
+
+	# Check if there is already an difftastic folder
+	if [[ ! -d "difftastic" ]]; then
+		# Git clone folder
+		sudo git clone https://github.com/Wilfred/difftastic.git
+
+		# Change owner
+		sudo chown -R ${USER:=$(/usr/bin/id -run)}:$USER difftastic
+	fi
+
+	# cd into folder and get the latest updates
+	cd difftastic && git pull >/dev/null 2>&1
+
+	# Install difftastic
+	if cargo build --release >/dev/null; then
+		# Copy the executable
+		sudo cp target/release/difft /usr/local/bin
+
+		echo "Successfully installed difftastic."
+	else
+		echo "Failed to install difftastic."
 		popd && exit 1
 	fi
 

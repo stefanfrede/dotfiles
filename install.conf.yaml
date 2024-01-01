@@ -56,14 +56,23 @@
   - command: ./scripts/install-github-cli.sh
     description: Installing GitHub CLI
     stdout: true
-  - command: ./scripts/install-utilities.sh
-    description: Installing Utilities
+  - command: ./scripts/install-lazygit.sh
+    description: Installing lazygit
     stdout: true
   - command: ./scripts/install-python.sh
     description: Installing Python
     stdout: true
   - command: ./scripts/install-neovim.sh
     description: Installing Neovim
+    stdout: true
+  - command: ./scripts/install-utilities.sh
+    description: Installing Utilities
+    stdout: true
+  - command: ./scripts/install-filezilla.sh
+    description: Installing VirtualBox
+    stdout: true
+  - command: ./scripts/install-typora.sh
+    description: Installing VirtualBox
     stdout: true
   - command: ./scripts/install-virtualbox.sh
     description: Installing VirtualBox

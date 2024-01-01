@@ -12,7 +12,6 @@ if command -v node >/dev/null 2>&1; then
 	npm i -g eslint
 	npm i -g prettier
 	npm i -g stylelint
-	npm i -g tern
 	# Install CLIs
 	npm i -g netlify-cli
 	npm i -g @sanity/cli

@@ -13,7 +13,10 @@ end
 -- This is where you actually apply your config choices
 
 config.color_scheme = "Tokyo Night"
-config.font = wezterm.font("MonoLisaVariable Nerd Font")
+config.font = wezterm.font_with_fallback({
+	"MonoLisa Variable",
+	"Fira Code",
+})
 
 config.window_frame = {
 	font = wezterm.font({ family = "MonoLisaVariable Nerd Font", weight = "Bold" }),

@@ -19,7 +19,7 @@ config.font = wezterm.font_with_fallback({
 })
 
 config.window_frame = {
-	font = wezterm.font({ family = "MonoLisaVariable Nerd Font", weight = "Bold" }),
+	font = wezterm.font({ family = "MonoLisa Variable", weight = "Bold" }),
 
 	font_size = 12.0,
 

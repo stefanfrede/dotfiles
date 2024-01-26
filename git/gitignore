@@ -18,6 +18,7 @@ tags
 tmp/**/*
 .tool-versions
 *.code-workspace
+.djlintrc
 
 # nvim sessions
 Session.vim

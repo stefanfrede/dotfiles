@@ -335,10 +335,10 @@ if ! command -v wezterm >/dev/null 2>&1; then
 	pushd ~/Downloads
 
 	# Download wezterm for Ubuntu 20.04
-	curl -LO https://github.com/wez/wezterm/releases/download/20230712-072601-f4abf8fd/wezterm-20230712-072601-f4abf8fd.Ubuntu20.04.deb
+	curl -LO https://github.com/wez/wezterm/releases/download/20240127-113634-bbcac864/wezterm-20240127-113634-bbcac864.Ubuntu20.04.deb
 
 	# Install fd
-	sudo apt install -y ./wezterm-20230712-072601-f4abf8fd.Ubuntu20.04.deb
+	sudo apt install -y ./wezterm-20240127-113634-bbcac864.Ubuntu20.04.deb
 
 	popd
 fi

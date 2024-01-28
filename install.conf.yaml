@@ -59,9 +59,6 @@
   - command: ./scripts/install-lazygit.sh
     description: Installing lazygit
     stdout: true
-  - command: ./scripts/install-python.sh
-    description: Installing Python
-    stdout: true
   - command: ./scripts/install-neovim.sh
     description: Installing Neovim
     stdout: true

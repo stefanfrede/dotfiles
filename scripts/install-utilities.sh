@@ -327,22 +327,6 @@ if ! command -v difft >/dev/null 2>&1; then
 	popd
 fi
 
-# Check if wezterm is installed
-# https://github.com/wez/
-if ! command -v wezterm >/dev/null 2>&1; then
-
-	# Switch to src folder
-	pushd ~/Downloads
-
-	# Download wezterm for Ubuntu 20.04
-	curl -LO https://github.com/wez/wezterm/releases/download/20240127-113634-bbcac864/wezterm-20240127-113634-bbcac864.Ubuntu20.04.deb
-
-	# Install fd
-	sudo apt install -y ./wezterm-20240127-113634-bbcac864.Ubuntu20.04.deb
-
-	popd
-fi
-
 # Check if tree-sitter is installed
 # https://tree-sitter.github.io/tree-sitter/
 if ! command -v tree-sitter >/dev/null 2>&1; then

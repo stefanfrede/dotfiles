@@ -14,6 +14,5 @@ if command -v node >/dev/null 2>&1; then
 	npm i -g stylelint
 	# Install CLIs
 	npm i -g netlify-cli
-	npm i -g @sanity/cli
 	npm i -g storyblok
 fi

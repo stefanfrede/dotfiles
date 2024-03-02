@@ -43,7 +43,7 @@
 [rebase]
   autosquash = true
 [rerere]
-	enabled = 1
+	enabled = true
 [delta]
   navigate = true
   features = line-numbers

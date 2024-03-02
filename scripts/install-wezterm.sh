@@ -31,11 +31,20 @@ if ! command -v wezterm >/dev/null 2>&1; then
 	./get-deps
 
 	# Install WezTerm
-	if cargo build --release >/dev/null; then
+	if cargo build --release --no-default-features --features vendored-fonts >/dev/null; then
 		# Copy the executable
 		sudo cp target/release/wezterm /usr/local/bin
 		sudo cp target/release/wezterm-gui /usr/local/bin
 		sudo cp target/release/wezterm-mux-server /usr/local/bin
+
+		sudo cp assets/open-wezterm-here /usr/local/bin
+
+		mkdir -p ~/.local/share/applications
+		cp assets/wezterm.desktop ~/.local/share/applications/org.wezfurlong.wezterm.desktop
+		mkdir -p ~/.local/share/metainfo
+		cp assets/wezterm.appdata.xml ~/.local/share/metainfo/org.wezfurlong.wezterm.appdata.xml
+		mkdir -p ~/.local/share/icons/hicolor/128x128/apps
+		cp assets/icon/terminal.png ~/.local/share/icons/hicolor/128x128/apps/org.wezfurlong.wezterm.png
 
 		echo "Successfully installed WezTerm."
 	else

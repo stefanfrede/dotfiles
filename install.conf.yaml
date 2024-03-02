@@ -41,7 +41,6 @@
 
     # WezTerm config file
     ~/.wezterm.lua: wezterm/wezterm.lua
-    ~/.local/share/applications: wezterm/org.wezfurlong.wezterm.desktop
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
